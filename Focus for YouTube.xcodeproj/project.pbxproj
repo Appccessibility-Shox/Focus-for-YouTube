@@ -11,7 +11,36 @@
 		CB7F1B6124762B9600783787 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB7F1B6024762B9600783787 /* ViewController.swift */; };
 		CB7F1B6324762B9700783787 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CB7F1B6224762B9700783787 /* Assets.xcassets */; };
 		CB7F1B6624762B9700783787 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CB7F1B6424762B9700783787 /* Main.storyboard */; };
+		CB7F1B7524762C0E00783787 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CB7F1B7424762C0E00783787 /* Cocoa.framework */; };
+		CB7F1B7824762C0E00783787 /* defaultBlockerList.json in Resources */ = {isa = PBXBuildFile; fileRef = CB7F1B7724762C0E00783787 /* defaultBlockerList.json */; };
+		CB7F1B7A24762C0E00783787 /* ContentBlockerRequestHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB7F1B7924762C0E00783787 /* ContentBlockerRequestHandler.swift */; };
+		CB7F1B7F24762C0E00783787 /* Content Blocker.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = CB7F1B7224762C0E00783787 /* Content Blocker.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		CB7F1B8524762C6C00783787 /* BlockableElementRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB7F1B8424762C6C00783787 /* BlockableElementRow.swift */; };
 /* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		CB7F1B7D24762C0E00783787 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = CB7F1B5324762B9600783787 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = CB7F1B7124762C0E00783787;
+			remoteInfo = "Content Blocker";
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		CB7F1B8324762C0E00783787 /* Embed App Extensions */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 13;
+			files = (
+				CB7F1B7F24762C0E00783787 /* Content Blocker.appex in Embed App Extensions */,
+			);
+			name = "Embed App Extensions";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		CB7F1B5B24762B9600783787 /* Focus for YouTube.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Focus for YouTube.app"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -21,6 +50,13 @@
 		CB7F1B6524762B9700783787 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		CB7F1B6724762B9700783787 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		CB7F1B6824762B9700783787 /* Focus_for_YouTube.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Focus_for_YouTube.entitlements; sourceTree = "<group>"; };
+		CB7F1B7224762C0E00783787 /* Content Blocker.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = "Content Blocker.appex"; sourceTree = BUILT_PRODUCTS_DIR; };
+		CB7F1B7424762C0E00783787 /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = System/Library/Frameworks/Cocoa.framework; sourceTree = SDKROOT; };
+		CB7F1B7724762C0E00783787 /* defaultBlockerList.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = defaultBlockerList.json; sourceTree = "<group>"; };
+		CB7F1B7924762C0E00783787 /* ContentBlockerRequestHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentBlockerRequestHandler.swift; sourceTree = "<group>"; };
+		CB7F1B7B24762C0E00783787 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		CB7F1B7C24762C0E00783787 /* Content_Blocker.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Content_Blocker.entitlements; sourceTree = "<group>"; };
+		CB7F1B8424762C6C00783787 /* BlockableElementRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BlockableElementRow.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -31,6 +67,14 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		CB7F1B6F24762C0E00783787 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				CB7F1B7524762C0E00783787 /* Cocoa.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
@@ -38,6 +82,8 @@
 			isa = PBXGroup;
 			children = (
 				CB7F1B5D24762B9600783787 /* Focus for YouTube */,
+				CB7F1B7624762C0E00783787 /* Content Blocker */,
+				CB7F1B7324762C0E00783787 /* Frameworks */,
 				CB7F1B5C24762B9600783787 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -46,6 +92,7 @@
 			isa = PBXGroup;
 			children = (
 				CB7F1B5B24762B9600783787 /* Focus for YouTube.app */,
+				CB7F1B7224762C0E00783787 /* Content Blocker.appex */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -55,12 +102,32 @@
 			children = (
 				CB7F1B5E24762B9600783787 /* AppDelegate.swift */,
 				CB7F1B6024762B9600783787 /* ViewController.swift */,
+				CB7F1B8424762C6C00783787 /* BlockableElementRow.swift */,
 				CB7F1B6224762B9700783787 /* Assets.xcassets */,
 				CB7F1B6424762B9700783787 /* Main.storyboard */,
 				CB7F1B6724762B9700783787 /* Info.plist */,
 				CB7F1B6824762B9700783787 /* Focus_for_YouTube.entitlements */,
 			);
 			path = "Focus for YouTube";
+			sourceTree = "<group>";
+		};
+		CB7F1B7324762C0E00783787 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				CB7F1B7424762C0E00783787 /* Cocoa.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		CB7F1B7624762C0E00783787 /* Content Blocker */ = {
+			isa = PBXGroup;
+			children = (
+				CB7F1B7724762C0E00783787 /* defaultBlockerList.json */,
+				CB7F1B7924762C0E00783787 /* ContentBlockerRequestHandler.swift */,
+				CB7F1B7B24762C0E00783787 /* Info.plist */,
+				CB7F1B7C24762C0E00783787 /* Content_Blocker.entitlements */,
+			);
+			path = "Content Blocker";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -73,15 +140,34 @@
 				CB7F1B5724762B9600783787 /* Sources */,
 				CB7F1B5824762B9600783787 /* Frameworks */,
 				CB7F1B5924762B9600783787 /* Resources */,
+				CB7F1B8324762C0E00783787 /* Embed App Extensions */,
 			);
 			buildRules = (
 			);
 			dependencies = (
+				CB7F1B7E24762C0E00783787 /* PBXTargetDependency */,
 			);
 			name = "Focus for YouTube";
 			productName = "Focus for YouTube";
 			productReference = CB7F1B5B24762B9600783787 /* Focus for YouTube.app */;
 			productType = "com.apple.product-type.application";
+		};
+		CB7F1B7124762C0E00783787 /* Content Blocker */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = CB7F1B8024762C0E00783787 /* Build configuration list for PBXNativeTarget "Content Blocker" */;
+			buildPhases = (
+				CB7F1B6E24762C0E00783787 /* Sources */,
+				CB7F1B6F24762C0E00783787 /* Frameworks */,
+				CB7F1B7024762C0E00783787 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "Content Blocker";
+			productName = "Content Blocker";
+			productReference = CB7F1B7224762C0E00783787 /* Content Blocker.appex */;
+			productType = "com.apple.product-type.app-extension";
 		};
 /* End PBXNativeTarget section */
 
@@ -94,6 +180,9 @@
 				ORGANIZATIONNAME = "Patrick Botros";
 				TargetAttributes = {
 					CB7F1B5A24762B9600783787 = {
+						CreatedOnToolsVersion = 11.4.1;
+					};
+					CB7F1B7124762C0E00783787 = {
 						CreatedOnToolsVersion = 11.4.1;
 					};
 				};
@@ -112,6 +201,7 @@
 			projectRoot = "";
 			targets = (
 				CB7F1B5A24762B9600783787 /* Focus for YouTube */,
+				CB7F1B7124762C0E00783787 /* Content Blocker */,
 			);
 		};
 /* End PBXProject section */
@@ -126,6 +216,14 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		CB7F1B7024762C0E00783787 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				CB7F1B7824762C0E00783787 /* defaultBlockerList.json in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -133,12 +231,29 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CB7F1B8524762C6C00783787 /* BlockableElementRow.swift in Sources */,
 				CB7F1B6124762B9600783787 /* ViewController.swift in Sources */,
 				CB7F1B5F24762B9600783787 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		CB7F1B6E24762C0E00783787 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				CB7F1B7A24762C0E00783787 /* ContentBlockerRequestHandler.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		CB7F1B7E24762C0E00783787 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = CB7F1B7124762C0E00783787 /* Content Blocker */;
+			targetProxy = CB7F1B7D24762C0E00783787 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		CB7F1B6424762B9700783787 /* Main.storyboard */ = {
@@ -268,6 +383,7 @@
 		CB7F1B6C24762B9700783787 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = "Focus for YouTube/Focus_for_YouTube.entitlements";
 				CODE_SIGN_STYLE = Automatic;
@@ -288,6 +404,7 @@
 		CB7F1B6D24762B9700783787 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = "Focus for YouTube/Focus_for_YouTube.entitlements";
 				CODE_SIGN_STYLE = Automatic;
@@ -301,6 +418,46 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "shockerella.Focus-for-YouTube";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+			};
+			name = Release;
+		};
+		CB7F1B8124762C0E00783787 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_ENTITLEMENTS = "Content Blocker/Content_Blocker.entitlements";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = L27L4K8SQU;
+				ENABLE_HARDENED_RUNTIME = YES;
+				INFOPLIST_FILE = "Content Blocker/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+					"@executable_path/../../../../Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "shockerella.Focus-for-YouTube.Content-Blocker";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 5.0;
+			};
+			name = Debug;
+		};
+		CB7F1B8224762C0E00783787 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_ENTITLEMENTS = "Content Blocker/Content_Blocker.entitlements";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = L27L4K8SQU;
+				ENABLE_HARDENED_RUNTIME = YES;
+				INFOPLIST_FILE = "Content Blocker/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+					"@executable_path/../../../../Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "shockerella.Focus-for-YouTube.Content-Blocker";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
 				SWIFT_VERSION = 5.0;
 			};
 			name = Release;
@@ -322,6 +479,15 @@
 			buildConfigurations = (
 				CB7F1B6C24762B9700783787 /* Debug */,
 				CB7F1B6D24762B9700783787 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		CB7F1B8024762C0E00783787 /* Build configuration list for PBXNativeTarget "Content Blocker" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				CB7F1B8124762C0E00783787 /* Debug */,
+				CB7F1B8224762C0E00783787 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

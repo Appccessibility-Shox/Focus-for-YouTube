@@ -1,0 +1,11 @@
+[
+  {
+    "trigger" : {
+      "url-filter" : "https:\/\/www.youtube.com.*"
+    },
+    "action" : {
+      "selector" : "ytd-two-column-browse-results-renderer[page-subtype='home'] #primary, a[href='\/feed\/trending'], div#related, div#merch-shelf, div#ticket-shelf, .ytp-endscreen-content, button.ytp-endscreen-previous, button.ytp-endscreen-next, .ytp-ce-element.ytp-ce-element-show",
+      "type" : "css-display-none"
+    }
+  }
+]
