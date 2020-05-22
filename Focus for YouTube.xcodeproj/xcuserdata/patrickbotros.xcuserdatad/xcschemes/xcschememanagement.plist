@@ -4,6 +4,11 @@
 <dict>
 	<key>SchemeUserState</key>
 	<dict>
+		<key>Content Blocker.xcscheme_^#shared#^_</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>1</integer>
+		</dict>
 		<key>Focus for YouTube.xcscheme_^#shared#^_</key>
 		<dict>
 			<key>orderHint</key>

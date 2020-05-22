@@ -1,7 +1,9 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.Cocoa.Storyboard.XIB" version="3.0" toolsVersion="11134" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES" initialViewController="B8D-0N-5wS">
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.Cocoa.Storyboard.XIB" version="3.0" toolsVersion="16096" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES" initialViewController="B8D-0N-5wS">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="11134"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="16096"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
         <!--Application-->
@@ -673,7 +675,7 @@
                         <outlet property="delegate" destination="Voe-Tx-rLC" id="PrD-fu-P6m"/>
                     </connections>
                 </application>
-                <customObject id="Voe-Tx-rLC" customClass="AppDelegate" customModuleProvider="target"/>
+                <customObject id="Voe-Tx-rLC" customClass="AppDelegate" customModule="Focus_for_YouTube" customModuleProvider="target"/>
                 <customObject id="YLy-65-1bz" customClass="NSFontManager"/>
                 <customObject id="Ady-hI-5gd" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -683,11 +685,12 @@
         <scene sceneID="R2V-B0-nI4">
             <objects>
                 <windowController id="B8D-0N-5wS" sceneMemberID="viewController">
-                    <window key="window" title="Window" allowsToolTipsWhenApplicationIsInactive="NO" autorecalculatesKeyViewLoop="NO" releasedWhenClosed="NO" visibleAtLaunch="NO" animationBehavior="default" id="IQv-IB-iLA">
-                        <windowStyleMask key="styleMask" titled="YES" closable="YES" miniaturizable="YES" resizable="YES"/>
+                    <window key="window" title="Focus for YouTube" allowsToolTipsWhenApplicationIsInactive="NO" autorecalculatesKeyViewLoop="NO" releasedWhenClosed="NO" visibleAtLaunch="NO" animationBehavior="default" titlebarAppearsTransparent="YES" titleVisibility="hidden" id="IQv-IB-iLA">
+                        <windowStyleMask key="styleMask" titled="YES" closable="YES" miniaturizable="YES" resizable="YES" fullSizeContentView="YES"/>
                         <windowPositionMask key="initialPositionMask" leftStrut="YES" rightStrut="YES" topStrut="YES" bottomStrut="YES"/>
-                        <rect key="contentRect" x="196" y="240" width="480" height="270"/>
+                        <rect key="contentRect" x="196" y="224" width="480" height="500"/>
                         <rect key="screenRect" x="0.0" y="0.0" width="1680" height="1027"/>
+                        <value key="minSize" type="size" width="330" height="350"/>
                         <connections>
                             <outlet property="delegate" destination="B8D-0N-5wS" id="98r-iN-zZc"/>
                         </connections>
@@ -698,20 +701,160 @@
                 </windowController>
                 <customObject id="Oky-zY-oP4" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="75" y="250"/>
+            <point key="canvasLocation" x="75" y="350"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="hIz-AP-VOD">
             <objects>
-                <viewController id="XfG-lQ-9wD" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" id="m2S-Jp-Qdl">
-                        <rect key="frame" x="0.0" y="0.0" width="480" height="270"/>
+                <viewController id="XfG-lQ-9wD" customClass="ViewController" customModule="Focus_for_YouTube" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" autoresizesSubviews="NO" id="ZN0-jh-FrC" customClass="ColoredView" customModule="Focus_for_YouTube" customModuleProvider="target">
+                        <rect key="frame" x="0.0" y="0.0" width="450" height="300"/>
                         <autoresizingMask key="autoresizingMask"/>
+                        <subviews>
+                            <scrollView borderType="none" autohidesScrollers="YES" horizontalLineScroll="65" horizontalPageScroll="10" verticalLineScroll="65" verticalPageScroll="10" hasHorizontalScroller="NO" usesPredominantAxisScrolling="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LzJ-gG-Wc9">
+                                <rect key="frame" x="0.0" y="152" width="450" height="52"/>
+                                <clipView key="contentView" drawsBackground="NO" copiesOnScroll="NO" id="0f6-l4-aG6">
+                                    <rect key="frame" x="0.0" y="0.0" width="450" height="52"/>
+                                    <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                    <subviews>
+                                        <tableView verticalHuggingPriority="750" allowsExpansionToolTips="YES" columnAutoresizingStyle="lastColumnOnly" columnSelection="YES" multipleSelection="NO" autosaveColumns="NO" rowHeight="63" rowSizeStyle="automatic" headerView="Kgq-AM-tZ1" viewBased="YES" id="Uuh-uz-M3y">
+                                            <rect key="frame" x="0.0" y="0.0" width="450" height="65"/>
+                                            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                            <size key="intercellSpacing" width="3" height="2"/>
+                                            <color key="backgroundColor" name="background_color"/>
+                                            <color key="gridColor" name="systemGreenColor" catalog="System" colorSpace="catalog"/>
+                                            <tableColumns>
+                                                <tableColumn editable="NO" width="447" minWidth="40" maxWidth="1000" id="qRn-14-2iH">
+                                                    <tableHeaderCell key="headerCell" lineBreakMode="truncatingTail" borderStyle="border">
+                                                        <color key="textColor" name="headerTextColor" catalog="System" colorSpace="catalog"/>
+                                                        <color key="backgroundColor" name="headerColor" catalog="System" colorSpace="catalog"/>
+                                                    </tableHeaderCell>
+                                                    <textFieldCell key="dataCell" lineBreakMode="truncatingTail" selectable="YES" editable="YES" title="Text Cell" id="AfR-sD-ZKU">
+                                                        <font key="font" metaFont="system"/>
+                                                        <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
+                                                        <color key="backgroundColor" name="controlBackgroundColor" catalog="System" colorSpace="catalog"/>
+                                                    </textFieldCell>
+                                                    <tableColumnResizingMask key="resizingMask" resizeWithTable="YES" userResizable="YES"/>
+                                                    <prototypeCellViews>
+                                                        <tableCellView identifier="domElementIdentifier" id="woa-64-6OI" customClass="BlockableElementRow" customModule="Focus_for_YouTube" customModuleProvider="target">
+                                                            <rect key="frame" x="1" y="1" width="447" height="63"/>
+                                                            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                                            <subviews>
+                                                                <textField verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" allowsExpansionToolTips="YES" id="BAB-Ob-It1">
+                                                                    <rect key="frame" x="48" y="38" width="383" height="16"/>
+                                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                                                    <textFieldCell key="cell" lineBreakMode="truncatingTail" sendsActionOnEndEditing="YES" title="Table View Cell" id="jTD-DI-yEH">
+                                                                        <font key="font" metaFont="system"/>
+                                                                        <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
+                                                                        <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                                                                    </textFieldCell>
+                                                                </textField>
+                                                                <button id="42t-K0-brQ">
+                                                                    <rect key="frame" x="14" y="37" width="18" height="18"/>
+                                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                                                    <buttonCell key="cell" type="square" bezelStyle="shadowlessSquare" image="checked" imagePosition="overlaps" alignment="center" imageScaling="proportionallyUpOrDown" inset="2" id="zB8-f3-eyr">
+                                                                        <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                                                        <font key="font" metaFont="system"/>
+                                                                    </buttonCell>
+                                                                    <connections>
+                                                                        <action selector="checkBoxClicked:" target="woa-64-6OI" id="QaW-hj-ZOn"/>
+                                                                    </connections>
+                                                                </button>
+                                                            </subviews>
+                                                            <connections>
+                                                                <outlet property="checkBoxImage" destination="42t-K0-brQ" id="CxB-EB-yhB"/>
+                                                                <outlet property="elementNameLabel" destination="BAB-Ob-It1" id="4XW-wB-CSL"/>
+                                                            </connections>
+                                                        </tableCellView>
+                                                    </prototypeCellViews>
+                                                </tableColumn>
+                                            </tableColumns>
+                                            <connections>
+                                                <outlet property="dataSource" destination="XfG-lQ-9wD" id="JME-8T-1jt"/>
+                                                <outlet property="delegate" destination="XfG-lQ-9wD" id="et6-Yq-doc"/>
+                                            </connections>
+                                        </tableView>
+                                    </subviews>
+                                </clipView>
+                                <edgeInsets key="contentInsets" left="0.0" right="0.0" top="0.0" bottom="0.0"/>
+                                <scroller key="horizontalScroller" hidden="YES" wantsLayer="YES" verticalHuggingPriority="750" horizontal="YES" id="81Z-BB-nO8">
+                                    <rect key="frame" x="-100" y="-100" width="438" height="16"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </scroller>
+                                <scroller key="verticalScroller" hidden="YES" wantsLayer="YES" verticalHuggingPriority="750" horizontal="NO" id="tAf-ZJ-Mgs">
+                                    <rect key="frame" x="-100" y="-100" width="15" height="102"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </scroller>
+                                <tableHeaderView key="headerView" hidden="YES" id="Kgq-AM-tZ1">
+                                    <rect key="frame" x="0.0" y="0.0" width="450" height="25"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </tableHeaderView>
+                            </scrollView>
+                            <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="6xM-aD-AEa">
+                                <rect key="frame" x="13" y="224" width="141" height="41"/>
+                                <textFieldCell key="cell" lineBreakMode="clipping" title="Blocklist" id="AG7-NP-JMz">
+                                    <font key="font" size="35" name="SFCompactRounded-Semibold"/>
+                                    <color key="textColor" name="font_color"/>
+                                    <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                                </textFieldCell>
+                            </textField>
+                            <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="wuO-ec-b42">
+                                <rect key="frame" x="84" y="33" width="282" height="32"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="21" id="K6e-Z2-66b"/>
+                                </constraints>
+                                <buttonCell key="cell" type="push" title="Open in Safari Extensions Preferences…" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="uj5-JL-V1Y">
+                                    <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                    <font key="font" metaFont="system"/>
+                                </buttonCell>
+                                <connections>
+                                    <action selector="openSafariExtensionPreferences:" target="XfG-lQ-9wD" id="T20-Mi-VV0"/>
+                                </connections>
+                            </button>
+                            <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="oGU-sC-Tuv">
+                                <rect key="frame" x="67" y="84" width="316" height="32"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="21" id="qWF-tN-tN6"/>
+                                </constraints>
+                                <buttonCell key="cell" type="push" title="Report an Issue or Suggest an Improvement…" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="X93-9E-pOK">
+                                    <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                    <font key="font" metaFont="system"/>
+                                </buttonCell>
+                                <connections>
+                                    <action selector="openIssuePage:" target="XfG-lQ-9wD" id="59k-Xz-P0Q"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <constraints>
+                            <constraint firstItem="6xM-aD-AEa" firstAttribute="leading" secondItem="ZN0-jh-FrC" secondAttribute="leading" constant="15" id="1CJ-1d-lo9"/>
+                            <constraint firstItem="LzJ-gG-Wc9" firstAttribute="leading" secondItem="ZN0-jh-FrC" secondAttribute="leading" id="1ls-la-EAA"/>
+                            <constraint firstItem="6xM-aD-AEa" firstAttribute="top" secondItem="ZN0-jh-FrC" secondAttribute="top" constant="35" id="2DR-xq-b2C"/>
+                            <constraint firstItem="wuO-ec-b42" firstAttribute="centerX" secondItem="ZN0-jh-FrC" secondAttribute="centerX" id="6K7-tq-zzW"/>
+                            <constraint firstAttribute="trailing" secondItem="LzJ-gG-Wc9" secondAttribute="trailing" id="ClG-3E-RaG"/>
+                            <constraint firstItem="oGU-sC-Tuv" firstAttribute="centerX" secondItem="ZN0-jh-FrC" secondAttribute="centerX" id="HVC-QV-znX"/>
+                            <constraint firstAttribute="bottom" secondItem="wuO-ec-b42" secondAttribute="bottom" constant="40" id="Hc9-rm-0eg"/>
+                            <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="6xM-aD-AEa" secondAttribute="trailing" constant="20" symbolic="YES" id="SKZ-5e-WCI"/>
+                            <constraint firstItem="wuO-ec-b42" firstAttribute="top" secondItem="oGU-sC-Tuv" secondAttribute="bottom" constant="30" id="hSu-DG-uaM"/>
+                            <constraint firstItem="LzJ-gG-Wc9" firstAttribute="top" secondItem="6xM-aD-AEa" secondAttribute="bottom" constant="20" id="mlp-e9-8fW"/>
+                            <constraint firstAttribute="bottom" secondItem="LzJ-gG-Wc9" secondAttribute="bottom" constant="152" id="tw5-h0-cPX"/>
+                        </constraints>
                     </view>
+                    <connections>
+                        <outlet property="tableView" destination="Uuh-uz-M3y" id="MSX-97-Y30"/>
+                    </connections>
                 </viewController>
                 <customObject id="rPt-NT-nkU" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="75" y="655"/>
+            <point key="canvasLocation" x="75" y="869"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="checked" width="207.5" height="207.5"/>
+        <namedColor name="background_color">
+            <color red="0.97636479139999999" green="0.97653168440000004" blue="0.9763541818" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="font_color">
+            <color red="0.98766583200000002" green="0.0013435441069999999" blue="0.001640139613" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+    </resources>
 </document>
