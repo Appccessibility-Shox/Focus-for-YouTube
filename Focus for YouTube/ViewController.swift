@@ -13,37 +13,34 @@ let defaults = UserDefaults.standard
 let appGroupID: String = "L27L4K8SQU.Focus4YouTube"
 let contentBlockerID: String = "shockerella.Focus-for-YouTube.Content-Blocker"
 
-
-enum actions: String {
-    case block = "block"
-    case css = "css-display-none"
-}
-
-typealias SwiftyBlockingRule = [String: [String: Any]]
-typealias SwiftyJSON = [SwiftyBlockingRule]
+typealias SwiftyJSON = [SwiftyRule]
 
 class BlockableElement {
-    let elementName, selector: String
+    let elementName: String
+    let rules: [BlockerRule]
     var blocked: Bool
-    init(named: String, blocked: Bool, selector: String) {
-        self.elementName = named
-        self.selector = selector
+    init(withName name: String, andRules rules: [BlockerRule], isBlockedByDefault blocked: Bool) {
+        self.elementName = name
+        self.rules = rules
         self.blocked = blocked
+    }
+    convenience init(withName name: String, andRule rule: BlockerRule, isBlockedByDefault blocked: Bool) {
+        self.init(withName: name, andRules: [rule], isBlockedByDefault: blocked)
     }
 }
 
 // Manually ensure these default block properties match the defaultBlockList.json.
 var blockableElements: [BlockableElement] = [
-     BlockableElement(named: "Homepage Recommendations", blocked: true, selector: "ytd-two-column-browse-results-renderer[page-subtype='home'] #primary"),
-     BlockableElement(named: "Endscreen Video Wall", blocked: true, selector: ".ytp-endscreen-content, button.ytp-endscreen-previous, button.ytp-endscreen-next, .ytp-ce-element.ytp-ce-element-show"),
-     BlockableElement(named: "Trending Videos", blocked: true, selector: "a[href='/feed/trending']"),
-     BlockableElement(named: "Related Videos Sidebar", blocked: true, selector: "div#related"),
-     BlockableElement(named: "Comments", blocked: false, selector: "ytd-comments#comments.style-scope.ytd-watch-flexy"),
-     BlockableElement(named: "Merch Shelf", blocked: true, selector: "div#merch-shelf"),
-     BlockableElement(named: "Ticket Shelf", blocked: true, selector: "div#ticket-shelf"),
-     BlockableElement(named: "Masthead Buttons", blocked: false, selector: "div#buttons"),
-     BlockableElement(named: "Details and Likes Bar", blocked: false, selector: "div#info"),
-     BlockableElement(named: "Description", blocked: false, selector: "ytd-expander.ytd-video-secondary-info-renderer")
+    BlockableElement(withName: "Homepage Recommendations", andRule: BlockerRule(selector: "ytd-two-column-browse-results-renderer[page-subtype='home'] #primary"), isBlockedByDefault: true),
+    BlockableElement(withName: "Endscreen Video Wall", andRule: BlockerRule(selector: ".ytp-endscreen-content, button.ytp-endscreen-previous, button.ytp-endscreen-next, .ytp-ce-element.ytp-ce-element-show"), isBlockedByDefault: true),
+    BlockableElement(withName: "Trending Videos", andRules: [BlockerRule(selector: "a[href='/feed/trending']"), BlockerRule(triggers: [.urlFilter: "https?://www.youtube.com/feed/trending"], actionType: .block)], isBlockedByDefault: true),
+    BlockableElement(withName: "Related Videos Sidebar", andRule: BlockerRule(selector: "div#related"), isBlockedByDefault: true),
+    BlockableElement(withName: "Comments", andRule: BlockerRule(selector: "ytd-comments#comments.style-scope.ytd-watch-flexy"), isBlockedByDefault: false),
+    BlockableElement(withName: "Merch Shelf", andRule: BlockerRule(selector: "div#merch-shelf"), isBlockedByDefault: true),
+    BlockableElement(withName: "Ticket Shelf", andRule: BlockerRule(selector: "div#ticket-shelf"), isBlockedByDefault: true),
+    BlockableElement(withName: "Masthead Buttons", andRule: BlockerRule(selector: "div#buttons"), isBlockedByDefault: false),
+    BlockableElement(withName: "Details and Likes Bar", andRule: BlockerRule(selector: "div#info"), isBlockedByDefault: false),
+    BlockableElement(withName: "Description", andRule: BlockerRule(selector: "ytd-expander.ytd-video-secondary-info-renderer"), isBlockedByDefault: false)
 ]
 
 class ViewController: NSViewController, NSTableViewDataSource, NSTableViewDelegate, DOMElementCellDelegate {
@@ -67,34 +64,22 @@ class ViewController: NSViewController, NSTableViewDataSource, NSTableViewDelega
         tableView.reloadData()
     }
 
-    var commaSeparatedSelectorsToBlock = ""
+    var activeBlockingRules = [SwiftyRule]()
 
     func updateDataSource(blocked: Bool, index: Int) {
         blockableElements[index].blocked = blocked
-        var selectorsToBlock: [String] = []
+        activeBlockingRules = [SwiftyRule]()
         for elementIndex in 0...blockableElements.count-1 where blockableElements[elementIndex].blocked {
-            selectorsToBlock.append(blockableElements[elementIndex].selector)
+            for rule in blockableElements[elementIndex].rules {
+                activeBlockingRules.append(rule.asSwiftyRule())
+            }
         }
-        commaSeparatedSelectorsToBlock = selectorsToBlock.joined(separator: ", ")
         tableView.reloadData()
     }
 
     func updateBlockListJSON() {
 
-        let blockList: SwiftyJSON =
-            [
-                [
-                    "trigger": [
-                        "url-filter": "https://www.youtube.com.*"
-                    ],
-                    "action": [
-                        "type": "css-display-none",
-                        "selector": commaSeparatedSelectorsToBlock
-                    ]
-                ]
-            ]
-
-        let blockListJSON = try? JSONSerialization.data(withJSONObject: blockList, options: .prettyPrinted)
+        let blockListJSON = try? JSONSerialization.data(withJSONObject: activeBlockingRules, options: .prettyPrinted)
 
         let appGroupPathname = FileManager.default.containerURL(forSecurityApplicationGroupIdentifier: appGroupID)!
 
@@ -117,7 +102,7 @@ extension ViewController {
 
     func tableView(_ tableView: NSTableView, viewFor tableColumn: NSTableColumn?, row: Int) -> NSView? {
         let domElementReuseID = NSUserInterfaceItemIdentifier(rawValue: "domElementIdentifier")
-        if let cell = tableView.makeView(withIdentifier: domElementReuseID, owner: nil) as? BlockableElementRow {
+        if let cell = tableView.makeView(withIdentifier: domElementReuseID, owner: nil) as? ChecklistRow {
             if blockableElements[row].blocked {
                 cell.checkBoxImage.image = NSImage(named: "checked")
             } else {
