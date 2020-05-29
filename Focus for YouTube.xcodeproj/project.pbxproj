@@ -15,7 +15,8 @@
 		CB7F1B7824762C0E00783787 /* defaultBlockerList.json in Resources */ = {isa = PBXBuildFile; fileRef = CB7F1B7724762C0E00783787 /* defaultBlockerList.json */; };
 		CB7F1B7A24762C0E00783787 /* ContentBlockerRequestHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB7F1B7924762C0E00783787 /* ContentBlockerRequestHandler.swift */; };
 		CB7F1B7F24762C0E00783787 /* Content Blocker.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = CB7F1B7224762C0E00783787 /* Content Blocker.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
-		CB7F1B8524762C6C00783787 /* BlockableElementRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB7F1B8424762C6C00783787 /* BlockableElementRow.swift */; };
+		CB7F1B8524762C6C00783787 /* ChecklistRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB7F1B8424762C6C00783787 /* ChecklistRow.swift */; };
+		CBACEA02248105A300EB4FBE /* BlockerRule.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBACEA01248105A300EB4FBE /* BlockerRule.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -56,7 +57,8 @@
 		CB7F1B7924762C0E00783787 /* ContentBlockerRequestHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentBlockerRequestHandler.swift; sourceTree = "<group>"; };
 		CB7F1B7B24762C0E00783787 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		CB7F1B7C24762C0E00783787 /* Content_Blocker.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Content_Blocker.entitlements; sourceTree = "<group>"; };
-		CB7F1B8424762C6C00783787 /* BlockableElementRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BlockableElementRow.swift; sourceTree = "<group>"; };
+		CB7F1B8424762C6C00783787 /* ChecklistRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChecklistRow.swift; sourceTree = "<group>"; };
+		CBACEA01248105A300EB4FBE /* BlockerRule.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BlockerRule.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -102,7 +104,8 @@
 			children = (
 				CB7F1B5E24762B9600783787 /* AppDelegate.swift */,
 				CB7F1B6024762B9600783787 /* ViewController.swift */,
-				CB7F1B8424762C6C00783787 /* BlockableElementRow.swift */,
+				CB7F1B8424762C6C00783787 /* ChecklistRow.swift */,
+				CBACEA01248105A300EB4FBE /* BlockerRule.swift */,
 				CB7F1B6224762B9700783787 /* Assets.xcassets */,
 				CB7F1B6424762B9700783787 /* Main.storyboard */,
 				CB7F1B6724762B9700783787 /* Info.plist */,
@@ -231,8 +234,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				CB7F1B8524762C6C00783787 /* BlockableElementRow.swift in Sources */,
+				CB7F1B8524762C6C00783787 /* ChecklistRow.swift in Sources */,
 				CB7F1B6124762B9600783787 /* ViewController.swift in Sources */,
+				CBACEA02248105A300EB4FBE /* BlockerRule.swift in Sources */,
 				CB7F1B5F24762B9600783787 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -317,7 +321,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				MACOSX_DEPLOYMENT_TARGET = 10.15;
+				MACOSX_DEPLOYMENT_TARGET = 10.13;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -371,7 +375,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				MACOSX_DEPLOYMENT_TARGET = 10.15;
+				MACOSX_DEPLOYMENT_TARGET = 10.13;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = macosx;
