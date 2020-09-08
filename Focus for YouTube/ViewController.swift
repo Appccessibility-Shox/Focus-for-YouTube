@@ -34,6 +34,8 @@ var blockableElements: [BlockableElement] = [
     BlockableElement(withName: "Homepage Recommendations", andRule: BlockerRule(selector: "ytd-two-column-browse-results-renderer[page-subtype='home'] #primary"), isBlockedByDefault: true),
     BlockableElement(withName: "Endscreen Video Wall", andRule: BlockerRule(selector: ".ytp-endscreen-content, button.ytp-endscreen-previous, button.ytp-endscreen-next, .ytp-ce-element.ytp-ce-element-show"), isBlockedByDefault: true),
     BlockableElement(withName: "Trending Videos", andRules: [BlockerRule(selector: "a[href='/feed/trending']"), BlockerRule(triggers: [.urlFilter: "https?://www.youtube.com/feed/trending"], actionType: .block)], isBlockedByDefault: true),
+    BlockableElement(withName: "Subscriptions", andRules: [BlockerRule(selector: "a[href='/feed/subscriptions']"), BlockerRule(triggers: [.urlFilter: "https?://www.youtube.com/feed/subscriptions"], actionType: .block)], isBlockedByDefault: false),
+    BlockableElement(withName: "Notifications", andRule: BlockerRule(selector: "div.ytd-notification-topbar-button-renderer"), isBlockedByDefault: false),
     BlockableElement(withName: "Related Videos Sidebar", andRule: BlockerRule(selector: "div#related"), isBlockedByDefault: true),
     BlockableElement(withName: "Comments", andRule: BlockerRule(selector: "ytd-comments#comments.style-scope.ytd-watch-flexy"), isBlockedByDefault: false),
     BlockableElement(withName: "Merch Shelf", andRule: BlockerRule(selector: "div#merch-shelf"), isBlockedByDefault: true),
