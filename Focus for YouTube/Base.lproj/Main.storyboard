@@ -198,7 +198,7 @@
                                     <rect key="frame" x="-100" y="-100" width="15" height="102"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                 </scroller>
-                                <tableHeaderView key="headerView" hidden="YES" id="Kgq-AM-tZ1">
+                                <tableHeaderView key="headerView" hidden="YES" wantsLayer="YES" id="Kgq-AM-tZ1">
                                     <rect key="frame" x="0.0" y="0.0" width="450" height="25"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                 </tableHeaderView>
@@ -212,7 +212,7 @@
                                 </textFieldCell>
                             </textField>
                             <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="wuO-ec-b42">
-                                <rect key="frame" x="84" y="33" width="282" height="32"/>
+                                <rect key="frame" x="81" y="33" width="288" height="33"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="21" id="K6e-Z2-66b"/>
                                 </constraints>
@@ -225,7 +225,7 @@
                                 </connections>
                             </button>
                             <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="oGU-sC-Tuv">
-                                <rect key="frame" x="67" y="84" width="316" height="32"/>
+                                <rect key="frame" x="64" y="84" width="322" height="33"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="21" id="qWF-tN-tN6"/>
                                 </constraints>
