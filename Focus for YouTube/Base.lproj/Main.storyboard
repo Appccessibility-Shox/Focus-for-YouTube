@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.Cocoa.Storyboard.XIB" version="3.0" toolsVersion="16097" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES" initialViewController="B8D-0N-5wS">
+<document type="com.apple.InterfaceBuilder3.Cocoa.Storyboard.XIB" version="3.0" toolsVersion="17701" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES" initialViewController="B8D-0N-5wS">
     <dependencies>
         <deployment identifier="macosx"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="16097"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="17701"/>
         <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -100,8 +100,8 @@
                 <windowController id="B8D-0N-5wS" sceneMemberID="viewController">
                     <window key="window" title="Focus for YouTube" allowsToolTipsWhenApplicationIsInactive="NO" autorecalculatesKeyViewLoop="NO" releasedWhenClosed="NO" visibleAtLaunch="NO" animationBehavior="default" titlebarAppearsTransparent="YES" titleVisibility="hidden" id="IQv-IB-iLA">
                         <windowStyleMask key="styleMask" titled="YES" closable="YES" miniaturizable="YES" resizable="YES" fullSizeContentView="YES"/>
-                        <windowPositionMask key="initialPositionMask" leftStrut="YES" rightStrut="YES" topStrut="YES" bottomStrut="YES"/>
-                        <rect key="contentRect" x="196" y="224" width="480" height="500"/>
+                        <windowPositionMask key="initialPositionMask" rightStrut="YES" bottomStrut="YES"/>
+                        <rect key="contentRect" x="196" y="100" width="480" height="920"/>
                         <rect key="screenRect" x="0.0" y="0.0" width="1680" height="1027"/>
                         <value key="minSize" type="size" width="330" height="350"/>
                         <connections>
@@ -114,7 +114,7 @@
                 </windowController>
                 <customObject id="Oky-zY-oP4" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="75" y="350"/>
+            <point key="canvasLocation" x="83" y="59"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="hIz-AP-VOD">
@@ -137,7 +137,7 @@
                                             <color key="backgroundColor" name="background_color"/>
                                             <color key="gridColor" name="systemGreenColor" catalog="System" colorSpace="catalog"/>
                                             <tableColumns>
-                                                <tableColumn editable="NO" width="447" minWidth="40" maxWidth="1000" id="qRn-14-2iH">
+                                                <tableColumn editable="NO" width="418" minWidth="40" maxWidth="1000" id="qRn-14-2iH">
                                                     <tableHeaderCell key="headerCell" lineBreakMode="truncatingTail" borderStyle="border">
                                                         <color key="textColor" name="headerTextColor" catalog="System" colorSpace="catalog"/>
                                                         <color key="backgroundColor" name="headerColor" catalog="System" colorSpace="catalog"/>
@@ -150,7 +150,7 @@
                                                     <tableColumnResizingMask key="resizingMask" resizeWithTable="YES" userResizable="YES"/>
                                                     <prototypeCellViews>
                                                         <tableCellView identifier="domElementIdentifier" id="woa-64-6OI" customClass="ChecklistRow" customModule="Focus_for_YouTube" customModuleProvider="target">
-                                                            <rect key="frame" x="1" y="1" width="447" height="63"/>
+                                                            <rect key="frame" x="11" y="1" width="427" height="63"/>
                                                             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                                             <subviews>
                                                                 <textField verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" allowsExpansionToolTips="YES" id="BAB-Ob-It1">
@@ -212,7 +212,7 @@
                                 </textFieldCell>
                             </textField>
                             <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="wuO-ec-b42">
-                                <rect key="frame" x="81" y="33" width="288" height="33"/>
+                                <rect key="frame" x="87" y="33" width="276" height="33"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="21" id="K6e-Z2-66b"/>
                                 </constraints>
@@ -225,7 +225,7 @@
                                 </connections>
                             </button>
                             <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="oGU-sC-Tuv">
-                                <rect key="frame" x="64" y="84" width="322" height="33"/>
+                                <rect key="frame" x="70" y="84" width="310" height="33"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="21" id="qWF-tN-tN6"/>
                                 </constraints>
