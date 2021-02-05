@@ -7,6 +7,14 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		CB06651525CD639000C17153 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CB7F1B7424762C0E00783787 /* Cocoa.framework */; };
+		CB06651825CD639000C17153 /* SafariExtensionHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB06651725CD639000C17153 /* SafariExtensionHandler.swift */; };
+		CB06651A25CD639000C17153 /* SafariExtensionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB06651925CD639000C17153 /* SafariExtensionViewController.swift */; };
+		CB06651D25CD639000C17153 /* script.js in Resources */ = {isa = PBXBuildFile; fileRef = CB06651C25CD639000C17153 /* script.js */; };
+		CB06651F25CD639000C17153 /* ToolbarItemIcon.pdf in Resources */ = {isa = PBXBuildFile; fileRef = CB06651E25CD639000C17153 /* ToolbarItemIcon.pdf */; };
+		CB06652225CD639000C17153 /* SafariExtensionViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = CB06652025CD639000C17153 /* SafariExtensionViewController.xib */; };
+		CB06652725CD639000C17153 /* Extension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = CB06651425CD639000C17153 /* Extension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		CB06653225CD681D00C17153 /* emptyBlockerList.json in Resources */ = {isa = PBXBuildFile; fileRef = CB06653125CD681D00C17153 /* emptyBlockerList.json */; };
 		CB7F1B5F24762B9600783787 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB7F1B5E24762B9600783787 /* AppDelegate.swift */; };
 		CB7F1B6124762B9600783787 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB7F1B6024762B9600783787 /* ViewController.swift */; };
 		CB7F1B6324762B9700783787 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CB7F1B6224762B9700783787 /* Assets.xcassets */; };
@@ -20,6 +28,13 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
+		CB06652525CD639000C17153 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = CB7F1B5324762B9600783787 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = CB06651325CD639000C17153;
+			remoteInfo = Extension;
+		};
 		CB7F1B7D24762C0E00783787 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = CB7F1B5324762B9600783787 /* Project object */;
@@ -36,6 +51,7 @@
 			dstPath = "";
 			dstSubfolderSpec = 13;
 			files = (
+				CB06652725CD639000C17153 /* Extension.appex in Embed App Extensions */,
 				CB7F1B7F24762C0E00783787 /* Content Blocker.appex in Embed App Extensions */,
 			);
 			name = "Embed App Extensions";
@@ -44,6 +60,15 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		CB06651425CD639000C17153 /* Extension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = Extension.appex; sourceTree = BUILT_PRODUCTS_DIR; };
+		CB06651725CD639000C17153 /* SafariExtensionHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SafariExtensionHandler.swift; sourceTree = "<group>"; };
+		CB06651925CD639000C17153 /* SafariExtensionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SafariExtensionViewController.swift; sourceTree = "<group>"; };
+		CB06651C25CD639000C17153 /* script.js */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.javascript; path = script.js; sourceTree = "<group>"; };
+		CB06651E25CD639000C17153 /* ToolbarItemIcon.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = ToolbarItemIcon.pdf; sourceTree = "<group>"; };
+		CB06652125CD639000C17153 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/SafariExtensionViewController.xib; sourceTree = "<group>"; };
+		CB06652325CD639000C17153 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		CB06652425CD639000C17153 /* Extension.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Extension.entitlements; sourceTree = "<group>"; };
+		CB06653125CD681D00C17153 /* emptyBlockerList.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = emptyBlockerList.json; sourceTree = "<group>"; };
 		CB7F1B5B24762B9600783787 /* Focus for YouTube.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Focus for YouTube.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		CB7F1B5E24762B9600783787 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		CB7F1B6024762B9600783787 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -62,6 +87,14 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		CB06651125CD639000C17153 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				CB06651525CD639000C17153 /* Cocoa.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		CB7F1B5824762B9600783787 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -80,11 +113,34 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		CB06651625CD639000C17153 /* Extension */ = {
+			isa = PBXGroup;
+			children = (
+				CB06651725CD639000C17153 /* SafariExtensionHandler.swift */,
+				CB06651925CD639000C17153 /* SafariExtensionViewController.swift */,
+				CB06652025CD639000C17153 /* SafariExtensionViewController.xib */,
+				CB06652325CD639000C17153 /* Info.plist */,
+				CB06652425CD639000C17153 /* Extension.entitlements */,
+				CB06651B25CD639000C17153 /* Resources */,
+			);
+			path = Extension;
+			sourceTree = "<group>";
+		};
+		CB06651B25CD639000C17153 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				CB06651C25CD639000C17153 /* script.js */,
+				CB06651E25CD639000C17153 /* ToolbarItemIcon.pdf */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
 		CB7F1B5224762B9600783787 = {
 			isa = PBXGroup;
 			children = (
 				CB7F1B5D24762B9600783787 /* Focus for YouTube */,
 				CB7F1B7624762C0E00783787 /* Content Blocker */,
+				CB06651625CD639000C17153 /* Extension */,
 				CB7F1B7324762C0E00783787 /* Frameworks */,
 				CB7F1B5C24762B9600783787 /* Products */,
 			);
@@ -95,6 +151,7 @@
 			children = (
 				CB7F1B5B24762B9600783787 /* Focus for YouTube.app */,
 				CB7F1B7224762C0E00783787 /* Content Blocker.appex */,
+				CB06651425CD639000C17153 /* Extension.appex */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -126,6 +183,7 @@
 			isa = PBXGroup;
 			children = (
 				CB7F1B7724762C0E00783787 /* defaultBlockerList.json */,
+				CB06653125CD681D00C17153 /* emptyBlockerList.json */,
 				CB7F1B7924762C0E00783787 /* ContentBlockerRequestHandler.swift */,
 				CB7F1B7B24762C0E00783787 /* Info.plist */,
 				CB7F1B7C24762C0E00783787 /* Content_Blocker.entitlements */,
@@ -136,6 +194,23 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
+		CB06651325CD639000C17153 /* Extension */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = CB06652A25CD639000C17153 /* Build configuration list for PBXNativeTarget "Extension" */;
+			buildPhases = (
+				CB06651025CD639000C17153 /* Sources */,
+				CB06651125CD639000C17153 /* Frameworks */,
+				CB06651225CD639000C17153 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = Extension;
+			productName = Extension;
+			productReference = CB06651425CD639000C17153 /* Extension.appex */;
+			productType = "com.apple.product-type.app-extension";
+		};
 		CB7F1B5A24762B9600783787 /* Focus for YouTube */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = CB7F1B6B24762B9700783787 /* Build configuration list for PBXNativeTarget "Focus for YouTube" */;
@@ -149,6 +224,7 @@
 			);
 			dependencies = (
 				CB7F1B7E24762C0E00783787 /* PBXTargetDependency */,
+				CB06652625CD639000C17153 /* PBXTargetDependency */,
 			);
 			name = "Focus for YouTube";
 			productName = "Focus for YouTube";
@@ -178,10 +254,13 @@
 		CB7F1B5324762B9600783787 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastSwiftUpdateCheck = 1140;
+				LastSwiftUpdateCheck = 1240;
 				LastUpgradeCheck = 1210;
 				ORGANIZATIONNAME = "Patrick Botros";
 				TargetAttributes = {
+					CB06651325CD639000C17153 = {
+						CreatedOnToolsVersion = 12.4;
+					};
 					CB7F1B5A24762B9600783787 = {
 						CreatedOnToolsVersion = 11.4.1;
 					};
@@ -205,11 +284,22 @@
 			targets = (
 				CB7F1B5A24762B9600783787 /* Focus for YouTube */,
 				CB7F1B7124762C0E00783787 /* Content Blocker */,
+				CB06651325CD639000C17153 /* Extension */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		CB06651225CD639000C17153 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				CB06652225CD639000C17153 /* SafariExtensionViewController.xib in Resources */,
+				CB06651F25CD639000C17153 /* ToolbarItemIcon.pdf in Resources */,
+				CB06651D25CD639000C17153 /* script.js in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		CB7F1B5924762B9600783787 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -223,6 +313,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CB06653225CD681D00C17153 /* emptyBlockerList.json in Resources */,
 				CB7F1B7824762C0E00783787 /* defaultBlockerList.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -230,6 +321,15 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		CB06651025CD639000C17153 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				CB06651A25CD639000C17153 /* SafariExtensionViewController.swift in Sources */,
+				CB06651825CD639000C17153 /* SafariExtensionHandler.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		CB7F1B5724762B9600783787 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -252,6 +352,11 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
+		CB06652625CD639000C17153 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = CB06651325CD639000C17153 /* Extension */;
+			targetProxy = CB06652525CD639000C17153 /* PBXContainerItemProxy */;
+		};
 		CB7F1B7E24762C0E00783787 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = CB7F1B7124762C0E00783787 /* Content Blocker */;
@@ -260,6 +365,14 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
+		CB06652025CD639000C17153 /* SafariExtensionViewController.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				CB06652125CD639000C17153 /* Base */,
+			);
+			name = SafariExtensionViewController.xib;
+			sourceTree = "<group>";
+		};
 		CB7F1B6424762B9700783787 /* Main.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -271,6 +384,54 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
+		CB06652825CD639000C17153 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_ENTITLEMENTS = Extension/Extension.entitlements;
+				CODE_SIGN_IDENTITY = "-";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 4;
+				DEVELOPMENT_TEAM = L27L4K8SQU;
+				ENABLE_HARDENED_RUNTIME = YES;
+				INFOPLIST_FILE = Extension/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+					"@executable_path/../../../../Frameworks",
+				);
+				MACOSX_DEPLOYMENT_TARGET = 11.0;
+				MARKETING_VERSION = 2.1;
+				PRODUCT_BUNDLE_IDENTIFIER = "shockerella.Focus-for-YouTube.Extension";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 5.0;
+			};
+			name = Debug;
+		};
+		CB06652925CD639000C17153 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_ENTITLEMENTS = Extension/Extension.entitlements;
+				CODE_SIGN_IDENTITY = "-";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 4;
+				DEVELOPMENT_TEAM = L27L4K8SQU;
+				ENABLE_HARDENED_RUNTIME = YES;
+				INFOPLIST_FILE = Extension/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+					"@executable_path/../../../../Frameworks",
+				);
+				MACOSX_DEPLOYMENT_TARGET = 11.0;
+				MARKETING_VERSION = 2.1;
+				PRODUCT_BUNDLE_IDENTIFIER = "shockerella.Focus-for-YouTube.Extension";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 5.0;
+			};
+			name = Release;
+		};
 		CB7F1B6924762B9700783787 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -395,7 +556,7 @@
 				CODE_SIGN_IDENTITY = "-";
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
-				CURRENT_PROJECT_VERSION = 3;
+				CURRENT_PROJECT_VERSION = 4;
 				DEVELOPMENT_TEAM = L27L4K8SQU;
 				ENABLE_HARDENED_RUNTIME = YES;
 				INFOPLIST_FILE = "Focus for YouTube/Info.plist";
@@ -403,7 +564,7 @@
 					"$(inherited)",
 					"@executable_path/../Frameworks",
 				);
-				MARKETING_VERSION = 2.0;
+				MARKETING_VERSION = 2.1;
 				PRODUCT_BUNDLE_IDENTIFIER = "shockerella.Focus-for-YouTube";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
@@ -419,7 +580,7 @@
 				CODE_SIGN_IDENTITY = "-";
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
-				CURRENT_PROJECT_VERSION = 3;
+				CURRENT_PROJECT_VERSION = 4;
 				DEVELOPMENT_TEAM = L27L4K8SQU;
 				ENABLE_HARDENED_RUNTIME = YES;
 				INFOPLIST_FILE = "Focus for YouTube/Info.plist";
@@ -427,7 +588,7 @@
 					"$(inherited)",
 					"@executable_path/../Frameworks",
 				);
-				MARKETING_VERSION = 2.0;
+				MARKETING_VERSION = 2.1;
 				PRODUCT_BUNDLE_IDENTIFIER = "shockerella.Focus-for-YouTube";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
@@ -440,7 +601,7 @@
 				CODE_SIGN_ENTITLEMENTS = "Content Blocker/Content_Blocker.entitlements";
 				CODE_SIGN_IDENTITY = "-";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 3;
+				CURRENT_PROJECT_VERSION = 4;
 				DEVELOPMENT_TEAM = L27L4K8SQU;
 				ENABLE_HARDENED_RUNTIME = YES;
 				INFOPLIST_FILE = "Content Blocker/Info.plist";
@@ -449,7 +610,7 @@
 					"@executable_path/../Frameworks",
 					"@executable_path/../../../../Frameworks",
 				);
-				MARKETING_VERSION = 2.0;
+				MARKETING_VERSION = 2.1;
 				PRODUCT_BUNDLE_IDENTIFIER = "shockerella.Focus-for-YouTube.Content-Blocker";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
@@ -463,7 +624,7 @@
 				CODE_SIGN_ENTITLEMENTS = "Content Blocker/Content_Blocker.entitlements";
 				CODE_SIGN_IDENTITY = "-";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 3;
+				CURRENT_PROJECT_VERSION = 4;
 				DEVELOPMENT_TEAM = L27L4K8SQU;
 				ENABLE_HARDENED_RUNTIME = YES;
 				INFOPLIST_FILE = "Content Blocker/Info.plist";
@@ -472,7 +633,7 @@
 					"@executable_path/../Frameworks",
 					"@executable_path/../../../../Frameworks",
 				);
-				MARKETING_VERSION = 2.0;
+				MARKETING_VERSION = 2.1;
 				PRODUCT_BUNDLE_IDENTIFIER = "shockerella.Focus-for-YouTube.Content-Blocker";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
@@ -483,6 +644,15 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		CB06652A25CD639000C17153 /* Build configuration list for PBXNativeTarget "Extension" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				CB06652825CD639000C17153 /* Debug */,
+				CB06652925CD639000C17153 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		CB7F1B5624762B9600783787 /* Build configuration list for PBXProject "Focus for YouTube" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
