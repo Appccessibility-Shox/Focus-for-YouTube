@@ -6,7 +6,7 @@
     <img align="right" style="position: absolute" src="Resources/MacAppStoreBadge.svg">
   </a>
 </h1>
-Focus for YouTube enables users to declutter YouTube's UI and hide the endless rabbit hole of reccomendations.
+Focus for YouTube enables users to streamline their video browsing experience. Whether you work on YouTube and are tired of the distractions, or whether you're a teacher who'd rather keep their recommended videos private while screencasting, you'll be able to fix YouTube to your liking within the Focus app. Since Focus disables the loading of many thumbnails, it will also speed up your browsing.
 
 <br>
 
