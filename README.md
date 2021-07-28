@@ -7,8 +7,8 @@
   </a>
 </h1>
 Focus for YouTube enables users to streamline their video browsing experience. Whether you work on YouTube and are tired of the distractions, or whether you're a teacher who'd rather keep their recommended videos private while screencasting, you'll be able to fix YouTube to your liking within the Focus app. Since Focus disables the loading of many thumbnails, it will also speed up your browsing.
-
-If you prefer a streamlined design for accessibility reasons, please email me at keys4safari@gmail.com for 100% off this extension (no questions asked). For example, if you're a person with an intellectual disability or a senior who finds YouTube's UI difficult to navigate, if you have ADHD or a visual impairment, I encourage you to email me to obtain this application for free.
+<br>
+**If you prefer a streamlined design for accessibility reasons, please email me at keys4safari@gmail.com for 100% off this extension (no questions asked). For example, if you're a person with an intellectual disability or a senior who finds YouTube's UI difficult to navigate, if you have ADHD or a visual impairment, I encourage you to email me to obtain this application for free.**
 
 <br>
 
