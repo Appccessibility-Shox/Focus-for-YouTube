@@ -8,7 +8,7 @@
 
 import Cocoa
 
-protocol DOMElementCellDelegate: class {
+protocol DOMElementCellDelegate: AnyObject {
     func updateDataSource(blocked: Bool, index: Int)
     func updateBlockListJSON()
 }
