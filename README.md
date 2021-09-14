@@ -1,5 +1,5 @@
 ## Major Contributors:
-George Botros, Patrick Botros, and Vincent Pun. And thank you to every one who has filed issue reports.
+George Botros, Patrick Botros, Margaret Botros, and Vincent Pun. And thank you to every one who has filed issue reports.
 
 <h1 align="center">
   <span align="center">
