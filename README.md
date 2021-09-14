@@ -1,3 +1,6 @@
+## Major Contributors:
+George Botros, Patrick Botros, and Vincent Pun. And thank you to every one who has filed issue reports.
+
 <h1 align="center">
   <span align="center">
     Focus for YouTube <img src="Resources/icon.png" alt="logo" width="32" height="32">
