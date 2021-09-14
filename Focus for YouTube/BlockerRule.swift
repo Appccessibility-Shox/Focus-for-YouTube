@@ -83,6 +83,7 @@ struct BlockerRule {
         }
     }
     
+    // This is based on Apple's documentation for the content blocking API. This is for bug-proofing to ensure the rule set is valid.
     func printActionValidity() {
         if actionType == actionTypes.CSSDisplayNone && selector == nil {
             print("Selector is required for action of type css-display-none")
