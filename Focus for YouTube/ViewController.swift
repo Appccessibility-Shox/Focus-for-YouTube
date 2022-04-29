@@ -35,7 +35,8 @@ var blockableElements: [BlockableElement] = [
     BlockableElement(withName: "Endscreen Video Wall", andRule: BlockerRule(selector: ".ytp-endscreen-content, button.ytp-endscreen-previous, button.ytp-endscreen-next, .ytp-ce-element.ytp-ce-element-show"), isBlockedByDefault: true),
     BlockableElement(withName: "Trending Videos", andRules: [BlockerRule(selector: "a[href='/feed/trending']"), BlockerRule(triggers: [.urlFilter: "https?://www.youtube.com/feed/trending"], actionType: .block)], isBlockedByDefault: true),
     BlockableElement(withName: "Explore", andRules: [BlockerRule(selector: "a[href='/feed/explore']"), BlockerRule(triggers: [.urlFilter: "https?://www.youtube.com/feed/explore"], actionType: .block)], isBlockedByDefault: false),
-    BlockableElement(withName: "Subscriptions", andRules: [BlockerRule(selector: "a[href='/feed/subscriptions']"), BlockerRule(triggers: [.urlFilter: "https?://www.youtube.com/feed/subscriptions"], actionType: .block)], isBlockedByDefault: false),
+    BlockableElement(withName: "Subscriptions", andRules: [BlockerRule(selector: "a[href='/feed/subscriptions'], ytd-guide-entry-renderer a[href^='/c/'], ytd-guide-entry-renderer a[title^='Show 1'], ytd-guide-entry-renderer a[title^='Show 2'], ytd-guide-entry-renderer a[title^='Show 3'], ytd-guide-entry-renderer a[title^='Show 4'], ytd-guide-entry-renderer a[title^='Show 5'], ytd-guide-entry-renderer a[title^='Show 6'], ytd-guide-entry-renderer a[title^='Show 7'], ytd-guide-entry-renderer a[title^='Show 8'], ytd-guide-entry-renderer a[title^='Show 9']"), BlockerRule(triggers: [.urlFilter: "https?://www.youtube.com/feed/subscriptions"], actionType: .block)], isBlockedByDefault: false),
+    BlockableElement(withName: "More From YouTube Guide Items", andRule: BlockerRule(selector: "ytd-guide-entry-renderer a[href='/premium'], ytd-guide-entry-renderer a[href='/premiu'], ytd-guide-entry-renderer a[href^='/feed/storefront'], ytd-guide-entry-renderer a[href='/gaming'], ytd-guide-entry-renderer a[href='/channel/UC4R8DWoMoI7CAwX8_LjQHig'], ytd-guide-entry-renderer a[href='/channel/UCrpQ4p1Ql_hG8rKXIKM1MOQ'], a[href='/channel/UCtFRv9O2AHqOZjjynzrv-xg'], a[href='/channel/UCEgdi0XIXXZ-qJOFPf4JSKw']"), isBlockedByDefault: false),
     BlockableElement(withName: "Notifications", andRule: BlockerRule(selector: "div.ytd-notification-topbar-button-renderer"), isBlockedByDefault: false),
     BlockableElement(withName: "Related Videos Sidebar", andRule: BlockerRule(selector: "div#related"), isBlockedByDefault: true),
     BlockableElement(withName: "Comments", andRule: BlockerRule(selector: "ytd-comments#comments.style-scope.ytd-watch-flexy"), isBlockedByDefault: false),
@@ -50,7 +51,7 @@ var blockableElements: [BlockableElement] = [
 
 class ViewController: NSViewController, NSTableViewDataSource, NSTableViewDelegate, DOMElementCellDelegate {
 
-    @IBOutlet weak var tableView: NSTableView!
+    @IBOutlet weak var tableView: NSTableView! // /channel/UCtFRv9O2AHqOZjjynzrv-xg
 
     @IBAction func openIssuePage(_ sender: Any) {
         NSWorkspace.shared.open(NSURL(string: "https://github.com/patrickshox/Focus-for-YouTube/issues")! as URL)
