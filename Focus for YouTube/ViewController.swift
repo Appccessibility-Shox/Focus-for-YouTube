@@ -44,7 +44,8 @@ var blockableElements: [BlockableElement] = [
     BlockableElement(withName: "Masthead Buttons", andRule: BlockerRule(selector: "div#buttons"), isBlockedByDefault: false),
     BlockableElement(withName: "Details and Likes Bar", andRule: BlockerRule(selector: "div#info"), isBlockedByDefault: false),
     BlockableElement(withName: "Description", andRule: BlockerRule(selector: "ytd-expander.ytd-video-secondary-info-renderer"), isBlockedByDefault: false),
-    BlockableElement(withName: "Thumbnail Images", andRule: BlockerRule(triggers: [.urlFilter: "https?://www.youtube.com.*", .resourceType: ["fetch"]], actionType: .CSSDisplayNone, selector: "#thumbnail #img"), isBlockedByDefault: false)
+    BlockableElement(withName: "Thumbnail Images", andRule: BlockerRule(triggers: [.urlFilter: "https?://www.youtube.com.*", .resourceType: ["fetch"]], actionType: .CSSDisplayNone, selector: "#thumbnail #img"), isBlockedByDefault: false),
+    BlockableElement(withName: "Shorts", andRules: [BlockerRule(selector: "a[title='Shorts']"), BlockerRule(triggers: [.urlFilter: "https?://www.youtube.com/shorts/.*"], actionType: .block)], isBlockedByDefault: false),
 ]
 
 class ViewController: NSViewController, NSTableViewDataSource, NSTableViewDelegate, DOMElementCellDelegate {
