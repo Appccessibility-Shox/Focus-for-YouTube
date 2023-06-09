@@ -34,19 +34,17 @@ var blockableElements: [BlockableElement] = [
     BlockableElement(withName: "Homepage Recommendations", andRule: BlockerRule(selector: "ytd-two-column-browse-results-renderer[page-subtype='home'] #primary"), isBlockedByDefault: true),
     BlockableElement(withName: "Endscreen Video Wall", andRule: BlockerRule(selector: ".ytp-endscreen-content, button.ytp-endscreen-previous, button.ytp-endscreen-next, .ytp-ce-element.ytp-ce-element-show"), isBlockedByDefault: true),
     BlockableElement(withName: "Trending Videos", andRules: [BlockerRule(selector: "a[href='/feed/trending']"), BlockerRule(triggers: [.urlFilter: "https?://www.youtube.com/feed/trending"], actionType: .block)], isBlockedByDefault: true),
-    BlockableElement(withName: "Explore", andRules: [BlockerRule(selector: "a[href='/feed/explore']"), BlockerRule(triggers: [.urlFilter: "https?://www.youtube.com/feed/explore"], actionType: .block)], isBlockedByDefault: false),
-    BlockableElement(withName: "Subscriptions", andRules: [BlockerRule(selector: "a[href='/feed/subscriptions'], ytd-guide-entry-renderer a[href^='/c/'], ytd-guide-entry-renderer a[title^='Show 1'], ytd-guide-entry-renderer a[title^='Show 2'], ytd-guide-entry-renderer a[title^='Show 3'], ytd-guide-entry-renderer a[title^='Show 4'], ytd-guide-entry-renderer a[title^='Show 5'], ytd-guide-entry-renderer a[title^='Show 6'], ytd-guide-entry-renderer a[title^='Show 7'], ytd-guide-entry-renderer a[title^='Show 8'], ytd-guide-entry-renderer a[title^='Show 9']"), BlockerRule(triggers: [.urlFilter: "https?://www.youtube.com/feed/subscriptions"], actionType: .block)], isBlockedByDefault: false),
-    BlockableElement(withName: "More From YouTube Guide Items", andRule: BlockerRule(selector: "ytd-guide-entry-renderer a[href='/premium'], ytd-guide-entry-renderer a[href='/premiu'], ytd-guide-entry-renderer a[href^='/feed/storefront'], ytd-guide-entry-renderer a[href='/gaming'], ytd-guide-entry-renderer a[href='/channel/UC4R8DWoMoI7CAwX8_LjQHig'], ytd-guide-entry-renderer a[href='/channel/UCrpQ4p1Ql_hG8rKXIKM1MOQ'], a[href='/channel/UCtFRv9O2AHqOZjjynzrv-xg'], a[href='/channel/UCEgdi0XIXXZ-qJOFPf4JSKw']"), isBlockedByDefault: false),
-    BlockableElement(withName: "Notifications", andRule: BlockerRule(selector: "div.ytd-notification-topbar-button-renderer"), isBlockedByDefault: false),
+    BlockableElement(withName: "Explore", andRules: [BlockerRule(selector: "a[href='/feed/explore'], #sections > ytd-guide-section-renderer:nth-child(3)"), BlockerRule(triggers: [.urlFilter: "https?://www.youtube.com/feed/explore"], actionType: .block)], isBlockedByDefault: false),
+    BlockableElement(withName: "Subscriptions", andRules: [BlockerRule(selector: "[title='Subscriptions'], #sections > ytd-guide-section-renderer:nth-child(2)"), BlockerRule(triggers: [.urlFilter: "https?://www.youtube.com/feed/subscriptions"], actionType: .block)], isBlockedByDefault: false),
+    BlockableElement(withName: "More From YouTube Guide Items", andRule: BlockerRule(selector: "#sections > ytd-guide-section-renderer:nth-child(4)"), isBlockedByDefault: false),
+    BlockableElement(withName: "Notifications", andRule: BlockerRule(selector: "#buttons > ytd-notification-topbar-button-renderer"), isBlockedByDefault: false),
     BlockableElement(withName: "Related Videos Sidebar", andRule: BlockerRule(selector: "div#related"), isBlockedByDefault: true),
     BlockableElement(withName: "Comments", andRule: BlockerRule(selector: "ytd-comments#comments.style-scope.ytd-watch-flexy"), isBlockedByDefault: false),
-    BlockableElement(withName: "Merch Shelf", andRule: BlockerRule(selector: "div#merch-shelf"), isBlockedByDefault: true),
-    BlockableElement(withName: "Ticket Shelf", andRule: BlockerRule(selector: "div#ticket-shelf"), isBlockedByDefault: true),
     BlockableElement(withName: "Masthead Buttons", andRule: BlockerRule(selector: "div#buttons"), isBlockedByDefault: false),
-    BlockableElement(withName: "Details and Likes Bar", andRule: BlockerRule(selector: "div#info"), isBlockedByDefault: false),
-    BlockableElement(withName: "Description", andRule: BlockerRule(selector: "ytd-expander.ytd-video-secondary-info-renderer"), isBlockedByDefault: false),
-    BlockableElement(withName: "Thumbnail Images", andRule: BlockerRule(triggers: [.urlFilter: "https?://www.youtube.com.*", .resourceType: ["fetch"]], actionType: .CSSDisplayNone, selector: "#thumbnail #img"), isBlockedByDefault: false),
-    BlockableElement(withName: "Shorts", andRules: [BlockerRule(selector: "a[title='Shorts']"), BlockerRule(triggers: [.urlFilter: "https?://www.youtube.com/shorts/.*"], actionType: .block)], isBlockedByDefault: false),
+    BlockableElement(withName: "Details and Likes Bar", andRule: BlockerRule(selector: "#top-row"), isBlockedByDefault: false),
+    BlockableElement(withName: "Description", andRule: BlockerRule(selector: "#bottom-row"), isBlockedByDefault: false),
+    BlockableElement(withName: "Thumbnail Images", andRule: BlockerRule(triggers: [.urlFilter: "https?://www.youtube.com.*", .resourceType: ["fetch"]], actionType: .CSSDisplayNone, selector: "#dismissible > ytd-thumbnail, #media-container"), isBlockedByDefault: false),
+    BlockableElement(withName: "Shorts", andRules: [BlockerRule(selector: "a[title='Shorts'], #contents > ytd-rich-section-renderer:nth-child(3), #contents > ytd-reel-shelf-renderer"), BlockerRule(triggers: [.urlFilter: "https?://www.youtube.com/shorts/.*"], actionType: .block)], isBlockedByDefault: false),
 ]
 
 class ViewController: NSViewController, NSTableViewDataSource, NSTableViewDelegate, DOMElementCellDelegate {
@@ -54,7 +52,7 @@ class ViewController: NSViewController, NSTableViewDataSource, NSTableViewDelega
     @IBOutlet weak var tableView: NSTableView! // /channel/UCtFRv9O2AHqOZjjynzrv-xg
 
     @IBAction func openIssuePage(_ sender: Any) {
-        NSWorkspace.shared.open(NSURL(string: "https://github.com/patrickshox/Focus-for-YouTube/issues")! as URL)
+        NSWorkspace.shared.open(NSURL(string: "https://github.com/Appccessibility-Shox/Focus-for-YouTube/issues")! as URL)
     }
 
     @IBAction func openSafariExtensionPreferences(_ sender: Any) {
