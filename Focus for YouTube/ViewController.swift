@@ -84,14 +84,27 @@ class ViewController: NSViewController, NSTableViewDataSource, NSTableViewDelega
     }
 
     func updateBlockListJSON() {
-
-        let blockListJSON = try? JSONSerialization.data(withJSONObject: activeBlockingRules, options: .prettyPrinted)
+        
+        let blockListJSON: Data
+        
+        if activeBlockingRules.isEmpty {
+            // Create a dummy rule JSON
+            let dummyRule = [
+                "action": ["type": "ignore-previous-rules"],
+                "trigger": ["url-filter": ".*", "if-domain": ["nonexistentwebsite.com"]]
+            ]
+            blockListJSON = try! JSONSerialization.data(withJSONObject: [dummyRule], options: .prettyPrinted)
+            print("No active blocking rules, applying dummy rule to clear previous rules.")
+        } else {
+            // Create JSON from active blocking rules
+            blockListJSON = try! JSONSerialization.data(withJSONObject: activeBlockingRules, options: .prettyPrinted)
+        }
 
         let appGroupPathname = FileManager.default.containerURL(forSecurityApplicationGroupIdentifier: appGroupID)!
 
         let blockListJSONfileLocation = appGroupPathname.appendingPathComponent("blockList.json")
-
-        try? blockListJSON!.write(to: blockListJSONfileLocation)
+        
+        try? blockListJSON.write(to: blockListJSONfileLocation)
 
         SFContentBlockerManager.reloadContentBlocker(withIdentifier: contentBlockerID, completionHandler: { error in
             print(error ?? "🔄 Blocker reload success.")
