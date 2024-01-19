@@ -31,20 +31,22 @@ class BlockableElement {
 
 // Manually ensure these default block properties match the defaultBlockList.json.
 var blockableElements: [BlockableElement] = [
-    BlockableElement(withName: "Homepage Recommendations", andRule: BlockerRule(selector: "ytd-two-column-browse-results-renderer[page-subtype='home'] #primary"), isBlockedByDefault: true),
-    BlockableElement(withName: "Endscreen Video Wall", andRule: BlockerRule(selector: ".ytp-endscreen-content, button.ytp-endscreen-previous, button.ytp-endscreen-next, .ytp-ce-element.ytp-ce-element-show"), isBlockedByDefault: true),
-    BlockableElement(withName: "Trending Videos", andRules: [BlockerRule(selector: "a[href='/feed/trending']"), BlockerRule(triggers: [.urlFilter: "https?://www.youtube.com/feed/trending"], actionType: .block)], isBlockedByDefault: true),
-    BlockableElement(withName: "Explore", andRules: [BlockerRule(selector: "a[href='/feed/explore'], #sections > ytd-guide-section-renderer:nth-child(3)"), BlockerRule(triggers: [.urlFilter: "https?://www.youtube.com/feed/explore"], actionType: .block)], isBlockedByDefault: false),
-    BlockableElement(withName: "Subscriptions", andRules: [BlockerRule(selector: "[title='Subscriptions'], #sections > ytd-guide-section-renderer:nth-child(2)"), BlockerRule(triggers: [.urlFilter: "https?://www.youtube.com/feed/subscriptions"], actionType: .block)], isBlockedByDefault: false),
-    BlockableElement(withName: "More From YouTube Guide Items", andRule: BlockerRule(selector: "#sections > ytd-guide-section-renderer:nth-child(4)"), isBlockedByDefault: false),
-    BlockableElement(withName: "Notifications", andRule: BlockerRule(selector: "#buttons > ytd-notification-topbar-button-renderer"), isBlockedByDefault: false),
-    BlockableElement(withName: "Related Videos Sidebar", andRule: BlockerRule(selector: "div#related"), isBlockedByDefault: true),
-    BlockableElement(withName: "Comments", andRule: BlockerRule(selector: "ytd-comments#comments.style-scope.ytd-watch-flexy"), isBlockedByDefault: false),
     BlockableElement(withName: "Masthead Buttons", andRule: BlockerRule(selector: "div#buttons"), isBlockedByDefault: false),
+    BlockableElement(withName: "Notifications", andRule: BlockerRule(selector: "#buttons > ytd-notification-topbar-button-renderer"), isBlockedByDefault: false),
+    BlockableElement(withName: "Homepage Recommendations", andRule: BlockerRule(selector: "ytd-two-column-browse-results-renderer[page-subtype='home'] #primary"), isBlockedByDefault: true),
+    BlockableElement(withName: "Thumbnail Images", andRule: BlockerRule(triggers: [.urlFilter: "https?://www.youtube.com.*", .resourceType: ["fetch"]], actionType: .CSSDisplayNone, selector: "#dismissible > ytd-thumbnail, #media-container"), isBlockedByDefault: false),
+    BlockableElement(withName: "Shorts", andRules: [BlockerRule(selector: "a[title='Shorts'], #contents > ytd-rich-section-renderer:nth-child(3), #contents > ytd-reel-shelf-renderer, #contents > ytd-rich-section-renderer:nth-child(5)"), BlockerRule(triggers: [.urlFilter: "https?://(www.)?youtube.com/shorts(/.*)?"], actionType: .block)], isBlockedByDefault: false),
+    BlockableElement(withName: "\"You\" Sidebar", andRule: BlockerRule(selector: "#items > ytd-guide-collapsible-section-entry-renderer"), isBlockedByDefault: false),
+    BlockableElement(withName: "Subscriptions", andRules: [BlockerRule(selector: "[title='Subscriptions'], #sections > ytd-guide-section-renderer:nth-child(2)"), BlockerRule(triggers: [.urlFilter: "https?://www.youtube.com/feed/subscriptions"], actionType: .block)], isBlockedByDefault: false),
+    BlockableElement(withName: "Explore", andRules: [BlockerRule(selector: "a[href='/feed/explore'], #sections > ytd-guide-section-renderer:nth-child(3)"), BlockerRule(triggers: [.urlFilter: "https?://www.youtube.com/feed/explore"], actionType: .block)], isBlockedByDefault: false),
+    BlockableElement(withName: "More From YouTube Guide Items", andRule: BlockerRule(selector: "#sections > ytd-guide-section-renderer:nth-child(4)"), isBlockedByDefault: false),
+    BlockableElement(withName: "Trending Videos", andRules: [BlockerRule(selector: "a[href='/feed/trending']"), BlockerRule(triggers: [.urlFilter: "https?://www.youtube.com/feed/trending"], actionType: .block)], isBlockedByDefault: true),
     BlockableElement(withName: "Details and Likes Bar", andRule: BlockerRule(selector: "#top-row"), isBlockedByDefault: false),
     BlockableElement(withName: "Description", andRule: BlockerRule(selector: "#bottom-row"), isBlockedByDefault: false),
-    BlockableElement(withName: "Thumbnail Images", andRule: BlockerRule(triggers: [.urlFilter: "https?://www.youtube.com.*", .resourceType: ["fetch"]], actionType: .CSSDisplayNone, selector: "#dismissible > ytd-thumbnail, #media-container"), isBlockedByDefault: false),
-    BlockableElement(withName: "Shorts", andRules: [BlockerRule(selector: "a[title='Shorts'], #contents > ytd-rich-section-renderer:nth-child(3), #contents > ytd-reel-shelf-renderer"), BlockerRule(triggers: [.urlFilter: "https?://www.youtube.com/shorts/.*"], actionType: .block)], isBlockedByDefault: false),
+    BlockableElement(withName: "Ticket/Merch Shelf", andRule: BlockerRule(selector: "#below > ytd-merch-shelf-renderer, #ticket-shelf"), isBlockedByDefault: true),
+    BlockableElement(withName: "Comments", andRule: BlockerRule(selector: "ytd-comments#comments.style-scope.ytd-watch-flexy"), isBlockedByDefault: false),
+    BlockableElement(withName: "Endscreen Video Wall", andRule: BlockerRule(selector: ".ytp-endscreen-content, button.ytp-endscreen-previous, button.ytp-endscreen-next, .ytp-ce-element.ytp-ce-element-show"), isBlockedByDefault: true),
+    BlockableElement(withName: "Related Videos Sidebar", andRule: BlockerRule(selector: "div#related"), isBlockedByDefault: true),
 ]
 
 class ViewController: NSViewController, NSTableViewDataSource, NSTableViewDelegate, DOMElementCellDelegate {
