@@ -22,5 +22,6 @@ Focus for YouTube enables users to streamline their video browsing experience. W
 - ["9 Mac Apps You Shouldn't Miss Out On" by YouTuber MacVince](https://youtu.be/DO3Jk_nQarY?si=vWdhTGjbvRTfYnxJ&t=96)
 - ["These Apple Safari extensions help improve my productivity" by John Kanellakos](https://www.pocket-lint.com/these-apple-safari-extensions-improve-productivity/)
 - [AAPL Ch.](https://applech2.com/archives/20200829-focus-for-youtube-safari-extension.html)
+- [The Caldito de Pollo blog article "Usando YouTube sin distracciones"](https://calditodepollo.com/2021/07/usando-youtube-sin-distracciones/)
 - [Demo Video by Middle School Teacher, Jason Rosenberg](https://burkeschool.zendesk.com/hc/en-us/articles/31455901969044-Focus-for-YouTube-Safari)
 - ["畫面又被擋住了，一招隱藏 YouTube 片尾推薦影片" by YouTuber 傑森 非線性 Jason Nonlinear](https://youtu.be/QBS3UJhlC2k?si=14lpJWnjvaAejiE1&t=150)
