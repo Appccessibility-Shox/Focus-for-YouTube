@@ -16,4 +16,4 @@ Focus for YouTube enables users to streamline their video browsing experience. W
 ![Focus for YouTube Blocker and Containing App Running on a MacBookPro](Resources/DesktopPreview.png)
 
 ### As seen in...
-- [the Cortex Podcast hosted by CGP Grey & Myke Hurley](https://www.relay.fm/cortex/160)
+- [Episode 160 of the Cortex Podcast (hosted by CGP Grey & Myke Hurley) at timestamp 1:33:27](https://www.relay.fm/cortex/160)
