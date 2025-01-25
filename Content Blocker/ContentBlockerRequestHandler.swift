@@ -16,10 +16,9 @@ class ContentBlockerRequestHandler: NSObject, NSExtensionRequestHandling {
         let appGroupPathname = FileManager.default.containerURL(forSecurityApplicationGroupIdentifier: appGroupID)
         let blocklistJSONFileLocation = appGroupPathname!.appendingPathComponent("blockList.json")
         let defaultBlockListFileLocation = Bundle.main.url(forResource: "defaultBlockerList", withExtension: "json")
-        var attachment: NSItemProvider = NSItemProvider(contentsOf: defaultBlockListFileLocation)!
-        if FileManager.default.fileExists(atPath: blocklistJSONFileLocation.path) {
-            attachment = NSItemProvider(contentsOf: blocklistJSONFileLocation)!
-        }
+        let attachment = FileManager.default.fileExists(atPath: blocklistJSONFileLocation.path) ?
+            NSItemProvider(contentsOf: blocklistJSONFileLocation)! :
+            NSItemProvider(contentsOf: defaultBlockListFileLocation)!
         let item = NSExtensionItem()
         item.attachments = [attachment]
         context.completeRequest(returningItems: [item], completionHandler: nil)
